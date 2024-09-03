@@ -1,0 +1,13 @@
+<form [formGroup]="linkForm" >
+    <label for="url">Enter link to shorten...</label>
+    <input id="url" formControlName="url" placeholder="https://example.com">
+    <button type="button" (click)="onSend()">Shorten</button>
+    <p>{{message}}</p>
+    <a href={{shortenedLink}}>{{shortenedLink}}</a>
+  
+    <div *ngIf="linkForm.controls['url'].invalid && linkForm.controls['url'].touched">
+      <small *ngIf="linkForm.controls['url'].errors?.['required']">Link is required</small>
+      <small *ngIf="linkForm.controls['url'].errors?.['pattern']">Type correct link</small>
+    </div>
+  </form>
+  

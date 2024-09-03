@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="mb-4">
+    <label for="link" class="form-label"><p>Enter the code of the link you want to get information about:</p></label>
+    <input id="link" type="text" class="form-control" [(ngModel)]='shortLink'>
+    <button type="button" class="btn btn-primary mt-2" (click)="getInfo()">Get Info</button>
+  </div>
+  
+  <div *ngIf="linkInfo" class="alert alert-info mt-4">
+    <h3 class="alert-heading">Link Information:</h3>
+    <ul class="list-unstyled">
+      <li><strong>Created at:</strong> {{ linkInfo.createdAt }}</li>
+      <li><strong>Created by:</strong> {{ linkInfo.user.email }}</li>
+      <li><strong>Source:</strong> {{ linkInfo.source }}</li>
+      <li><strong>Views:</strong> {{ linkInfo.views }}</li>
+    </ul>
+  </div>
+</div>

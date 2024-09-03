@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ccc;
+  
+    .navbar-section {
+      display: flex;
+      align-items: center;
+  
+      &.brand {
+        flex: 1;
+        font-weight: bold;
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+  
+      &.links {
+        flex: 3;
+        justify-content: space-around;
+  
+        a {
+          text-decoration: none;
+          color: #000;
+          position: relative;
+          padding: 0 10px;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+  
+        }
+      }
+    }
+  }
+  

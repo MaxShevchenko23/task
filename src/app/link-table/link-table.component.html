@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Source Link</th>
+        <th>Short Link</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let link of links; let i = index">
+        <td>{{ link.id }}</td>
+        <td>{{ link.source }}</td>
+        <td><a [href]="'https://localhost:7098/shortener/' + link.shortened">{{ link.shortened }}</a></td>
+        <td>
+          <button (click)="editLink(i)" class="btn btn-primary">Edit</button>
+          <button (click)="deleteLink(i)" class="btn btn-danger">Delete</button>
+          <button (click)="showInfo(link.shortened)" class="btn btn-warning">Show info</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

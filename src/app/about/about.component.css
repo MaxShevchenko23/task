@@ -1,0 +1,23 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .donation-section {
+    margin: 40px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .donate-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .donate-button:hover {
+    background-color: #218838;
+  }
+  

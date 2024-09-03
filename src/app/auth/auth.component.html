@@ -1,0 +1,35 @@
+<div class="auth-container">
+  <div class="sign-in-form">
+    <h2>Sign In</h2>
+    <form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" />
+      
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" />
+      
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <div class="register-form">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <label for="reg-email">Email</label>
+      <input id="reg-email" formControlName="email" type="email" />
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        <small>Email is required and must be valid.</small>
+      </div>
+
+      <label for="reg-password">Password</label>
+      <input id="reg-password" formControlName="password" type="password" />
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        <small>Password is required (minimum 6 characters).</small>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <a routerLink="/about">About</a>
+
+</div>
